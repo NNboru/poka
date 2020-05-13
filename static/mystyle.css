@@ -1,0 +1,95 @@
+body{
+	font-size:20px;
+	background-color:#E8EEEE;
+	scroll-behavior: smooth;
+}
+.box{
+	position:absolute;
+	box-shadow:none;
+	/* box-sizing:border-box; */
+	border-width:2px;
+	border-radius:10px 10px 10px 10px;
+	border-style:solid;
+	border-color:rgb(173, 216, 230,0);
+	outline:none;
+	width:300;
+	height:200;
+	transition:hidden .4s;
+}
+
+.mydiv{
+	width:inherit;
+	height:inherit;
+}
+.txt{
+	width:inherit;
+	position:absolute;
+	bottom:0;
+	height:calc(100% - 20px);
+	box-sizing:border-box;
+	background:none;
+	border:none;
+	resize:none;
+	outline:none;
+	border-radius:0px 0px 20px 20px;
+	padding:2px;
+	font:20px times;
+}
+.bar{
+	display:none;
+	box-sizing:border-box;
+	position:absolute;
+	top:0;
+	width:inherit;
+	height:20px;
+	transition:display .2s;
+	cursor:grabbing;
+}
+.barbut{
+	background:none;
+	position:absolute;
+	border:none;
+	border-radius:20px;
+	padding:0;
+	padding-top:3px;
+	right:3px;
+	width:20px;
+	height:20px;
+	color:red;
+	font-family:cursive;
+	font-weight:900;
+	outline:none;
+}
+.block{
+	width:inherit;
+	height:inherit;
+	background-color:silver;
+	border-radius:8px;
+	box-sizing: border-box;
+}
+.frame{
+	width:inherit;
+	height:inherit;
+	padding:0;
+	border:4px solid silver;
+	border-radius:8px;
+	box-sizing: border-box;
+}
+
+.file {
+	display:none;
+}
+.image{
+	box-sizing:border-box;
+	height:inherit;
+	width:inherit;
+}
+.dialog{
+	position:absolute;
+	right:10px;
+	top:22px;
+}
+.txtdialog{
+	height:100px;
+	width:200px;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> CreatePage </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script  		 		src="../static/jquery/jquery-3.4.1.min.js"></script>
+	<link rel='stylesheet' 	href="../static/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<script  		 		src="../static/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script 				src="../static/jquery/jquery.ui.touch-punch.min.js"></script>
+	<link rel='stylesheet' 	href="../static/createPage.css">
+	<script 				src="../static/createPage.js"></script>
+	<script 				src="../static/cookie.js"></script>
+	
+</head>
+
+<body id='bdy' tabindex=1>
+
+	<div class="insertbar flex" id='insertbar'>
+		<button type='button' value='text'  class='but' title='Insert TextBox' > Text </button>
+		<button type='button' value='block' class='but' title='Insert BlockBox'> Block </button>
+		<button type='button' value='frame' class='but' title='Insert FrameBox'> Frame </button>
+		<button type='button' value='image' class='but' title='Insert ImageBox'> Image </button>
+		<button type='button' class='but' title='Preview of your Page' id='preview'> Preview </button>
+		<button type='button' class='but' title='Save your Page' id='save'> <b>Save</b> </button>
+	</div>
+	
+	<div id='page' data-width='1366' data-maxz='2'>
+	
+		<div class="box" id="box1" tabindex="1" style="border-color: rgba(173, 216, 230, 0.8); background-size: initial; top: 460.99px; left: 35.9814px; z-index: 0; box-shadow: none; height: 187.98px; width: 1314.98px;">
+			<div class="bar" style="display: none;">
+				<button type="button" class="barbut delme" title="Delete" style="font-size: 1.22289em;"> X </button>
+				<button type="button" class="barbut mycss" title="Edit CSS" style="font-size: 1.22289em; right: 46.4578px;"> CSS </button>
+				<div class="dialog" hidden=""> <textarea class="txtdialog" spellcheck="false" style="background: none;">font:40px times;
+</textarea> </div>
+			</div>
+			<textarea placeholder="Your content goes here..." wrap="on" class="txt user" spellcheck="false" style="font: 40px times; background: none;">       Below is insert-bar, use it to insert content in your page. Don't forget to save!</textarea>
+		</div>
+		
+		<div class="box" id="box2" tabindex="1" style="border-color: rgba(173, 216, 230, 0.8); background-size: initial; top: 243.926px; left: 302.962px; z-index: 0; box-shadow: none; width: 753.97px; height: 260.976px;">
+			<div class="bar" style="display: none;">
+				<button type="button" class="barbut delme" title="Delete" style="font-size: 1.22289em;"> X </button>
+				<button type="button" class="barbut mycss" title="Edit CSS" style="font-size: 1.22289em; right: 46.4578px;"> CSS </button>
+				<div class="dialog" hidden=""> <textarea class="txtdialog" spellcheck="false" style="background: none;">font:30px times;
+color:red;
+</textarea> </div>
+			</div>
+			<textarea placeholder="Your content goes here..." wrap="on" class="txt user" spellcheck="false" style="font: 30px times; color: red; background: none;">These boxes can be dragged, resized and css-styled.
+Start By deleting me and the below one.
+                                                ⬇⬇⬇</textarea>
+		</div>
+		
+		<div class="box" tabindex="1" style="border-color: rgba(173, 216, 230, 0.8); background-size: initial; top: 169.93px; left: 35.9474px; z-index: 0; box-shadow: none; width: 1299.99px; height: 10px;">
+			<div class="bar" style="display: none;">
+				<button type="button" class="barbut delme" title="Delete"> X </button>
+				<button type="button" class="barbut mycss" title="Edit CSS"> CSS </button>
+				<div class="dialog" hidden=""> <textarea class="txtdialog" spellcheck="false">background-color:orangered;
+</textarea>  </div>
+			</div>
+			<div class="block user" style="background-color:orangered;"></div>
+		</div>
+		
+		<div class="box" tabindex="1" style="box-shadow: none; z-index: 0; left: 163.952px; top: 13.9107px; width: 1009.98px; height: 217.959px; border-color: rgba(173, 216, 230, 0.8); background-size: initial;">
+			<div class="bar" style="display: none;">
+				<button type="button" class="barbut delme" title="Delete"> X </button>
+				<button type="button" id="qwer" class="barbut mycss" title="Edit CSS"> CSS </button>
+				<div class="dialog" style="z-index: 12;" hidden=""> <textarea class="txtdialog" spellcheck="false" style="background: none;">font:80px times;
+color:blue;
+text-align:center;</textarea> </div>
+			</div>
+			<textarea placeholder="Your content goes here..." wrap="on" class="txt user" spellcheck="false" style="font: 80px times; color: blue; text-align: center; background: none;">Welcome to your page</textarea>
+		
+		</div>
+		
+	</div>
+		
+	</div>
+	
+	
+	<div hidden>
+	
+	<div id='temptxt'>
+		<div class='box' tabindex='1'>
+			<div class='bar'>
+				<button type='button' class='barbut delme' title='Delete'> X </button>
+				<button type='button' class='barbut mycss' title='Edit CSS'> CSS </button>
+				<div class='dialog'  hidden> <textarea class='txtdialog' spellcheck=false>font:20px times;
+</textarea> </div>
+			</div>
+			<textarea placeholder='Your content goes here...' wrap='on' class='txt user'  spellcheck=false></textarea>
+		</div>
+	</div>
+	
+	<div id='tempblock'>
+		<div class='box' tabindex='1'>
+			<div class='bar'>
+				<button type='button' class='barbut delme' title='Delete'> X </button>
+				<button type='button' class='barbut mycss' title='Edit CSS'> CSS </button>
+				<div class='dialog'  hidden> <textarea class='txtdialog' spellcheck=false>background-color:silver;
+</textarea>  </div>
+			</div>
+			<div class='block user'></div>
+		</div>
+	</div>
+	
+	<div id='tempframe'>
+		<div class='box' tabindex='1'>
+			<div class='bar'>
+				<button type='button' class='barbut delme' title='Delete'> X </button>
+				<button type='button' class='barbut mycss' title='Edit CSS'> CSS </button>
+				<div class='dialog'  hidden> <textarea class='txtdialog' spellcheck=false>border:4px solid silver;
+</textarea> </div>
+			</div>
+			<div class='frame user'></div>
+		</div>
+	</div>
+	
+	<div id='tempimg'>
+		<div class='box' tabindex='1'>
+			<div class='bar'>
+				<button type='button' class='barbut delme' title='Delete'> X </button>
+				<button type='button' class='barbut mycss' title='Edit CSS'> CSS </button>
+				<div class='dialog'  hidden> <textarea class='txtdialog' spellcheck=false>border-radius:4px;
+</textarea> </div>
+			</div>
+			<input type="file" accept='image/*' class='file'>
+			<img  class='image user' hidden>
+		</div>
+	</div>
+	
+	</div>
+	
+	<dialog id='popup' class='popup'>
+		<span> <b>Saved Successfully</b> </span>
+		<button class='barbut closebut' onclick='popup.close()' title='close'> <b>❌</b> </button>
+		<hr><br>
+		link of your page is -<br>
+		<a target='_blank' id='darkerlink'>
+			<span id='darker'></span>
+		</a>
+		&nbsp;<button id='copybut' title='copy link to clipboard'> copy </button>
+		<input id='darktxt' hidden> 
+		<script>
+			darker.innerText=location.origin + '/myPage/' + getCookie('user');
+			darktxt.value=darker.innerText.trim();
+			darkerlink.href = darktxt.value;
+		</script>
+		<br><br>
+		You can edit again at link -<br>
+		<a target='_blank' id='darkerlink2'>
+			<span id='darker2'></span>
+		</a>
+		&nbsp;<button id='copybut2' title='copy link to clipboard'> copy </button>
+		<input id='darktxt2' hidden> 
+		<script>
+			darker2.innerText=location.origin + '/createPage/' + getCookie('user');
+			darktxt2.value=darker2.innerText.trim();
+			darkerlink2.href = darktxt2.value;
+		</script>
+		
+		<br><br><hr>
+		<button class='but' id='sharebut'> share </button>
+		<button class='but' onclick='popup.close()'> <b>ok</b> </button>
+	</dialog>
+	
+	<div class='loadbox' id='loadbox'>
+		<div class='loader'>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<p>loading</p>
+	</div>
+	
+</body>
+
+</html>

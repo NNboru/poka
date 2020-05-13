@@ -1,0 +1,100 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> MyPage </title>
+	
+	<script  		 		src="../static/jquery/jquery-3.4.1.min.js"></script>
+	<link rel='stylesheet' 	href="../static/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<script  		 		src="../static/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script 				src="../static/mypage.js"></script>
+	<script 				src="../static/cookie.js"></script>
+	
+	<style>
+	
+		#bdy{
+			font:36px cursive;
+			min-height:100%;
+			margin-bottom:0;
+			background-color:#E4EEEE;
+		}
+		#logo img{
+			height:60px;
+			width:60px;
+			position:absolute;
+			top:0;
+			left:0;
+			opacity:.4;
+			transition:opacity .2s;
+			cursor:pointer;
+		}
+		#logo img:hover{
+			opacity:1;
+		}
+		#error{
+			height:20px;
+			font-size:.5em;
+			color:red;
+		}
+		#pname{
+			font-size:.8em;
+			color:darkblue;
+			padding:20px 40px;
+			width:90%;
+			border-radius:40px;
+			outline:none;
+			letter-spacing:2px;
+			border:1px solid snow;
+			background-color:skyblue;
+			display:block;
+			margin:auto;
+		}
+		footer{
+			width:100%;
+			height:60px;
+			font-size:20px;
+			color:gold;
+			background:rgb(99,99,99,.4);
+			text-align:center;
+			position:absolute;
+		}
+	</style>
+	
+</head>
+
+<body id='bdy'>
+	<div id='logo'><a href='/'><img src='../static/favicon.ico' title='home'></a></div> 
+	
+	<center>
+	<div id='header'>
+		<h1><b> Build your own Page&nbsp!! </b></h1><hr> <br>
+	</div>
+	
+	<div id='main'>
+		<div id='error'></div>
+		<form id='form' onsubmit='return false;'>
+			<label for='pname' ><h3>What you would like to be your page name: </h3></label>
+			<input type='text' id='pname' name='pname' spellcheck=false pattern="[\d\w]*" required autofocus>
+			<br><br>
+			<button type='submit' id='start' > Start </button>
+		</form> <br>
+	</div>
+	</center>
+	
+	
+	<p style='font-size:calc(.2em + 1vw)'><b>note:</b> If you already have a page, and want to edit it again, go to the link: poka.pythonanywhere.com/createPage/<i>your_page_name</i></p>
+	<footer id='footer'>
+		Contact / Feedback: <a target="_blank" href="https://mail.google.com/mail/?view=cm&to=rohan.rawat.9897@gmail.com">rohan.rawat.9897@gmail.com</a>
+	</footer>
+	
+	
+	
+	
+	
+	
+	<script>
+		
+	</script>
+	
+</body>
+
+</html>

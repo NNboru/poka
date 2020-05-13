@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Graphs </title>
+	<script  id='sc' 		src="../static/jquery/jquery-3.4.1.min.js"></script>
+	<link rel='stylesheet' 	href="../static/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+	<script  id='sc1' 		src="../static/jquery/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script 				src="../static/jquery/jquery.ui.touch-punch.min.js"></script>
+	<!--
+	<script src="{{url_for('static',filename='cookie.js')}}"></script>
+	-->
+</head>
+
+<body id='bdy'  onerror='alert("error chutiye")'>
+	
+	<style>
+		#bdy{
+			font-size:40px;
+		}
+		.box{
+			width:200px;
+			height:200px;
+			position:absolute;
+			background-color:green;
+			box-shadow: 0px 0px 8px 4px blue;
+		}
+		.handle{
+			width:20px;
+			height:20px;
+			border-radius:100% 0 0 0;
+			position:absolute;
+			bottom:0;
+			right:0;
+			background-color:red;
+		}
+		#page{
+			zoom:.5;
+			width:99%;
+			height:99%;
+			margin:auto;
+			border:1px solid;
+		}
+	</style>
+	<div id= 'page'>
+	<div id='txt'></div>
+	<div class='box' id='box'><div class='handle' id='hand'></div></div>
+	</div>
+	
+	
+	<script>
+		$('#box').draggable({start:grabdrag, drag:dragging}).resizable({start:grabresize,resize:resizing});
+		function grabdrag(e,ui){
+			lf=ui.position.left;
+			tp=ui.position.top;
+		}
+		function grabresize(e,ui){
+			lf=ui.position.left;
+			tp=ui.position.top;
+			wd=ui.size.width;
+			ht=ui.size.height;
+		}
+		function dragging(e,ui){
+			ui.position.left=lf + (ui.position.left-lf )*fact;
+			ui.position.top =tp + (ui.position.top- tp )*fact;
+		}
+		function resizing(e,ui){
+			ui.size.width = wd + (ui.size.width -wd)*fact;
+			ui.size.height= ht + (ui.size.height-ht)*fact;
+		}
+		
+	</script>
+	
+	
+</body>
+
+</html>

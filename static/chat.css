@@ -1,0 +1,142 @@
+body{
+	margin:2px;
+	background-color:#E8EEEE;
+}
+*{
+	font:20px cursive;
+}
+
+
+#typebox{
+	display:grid;
+	grid-template-columns: auto auto auto auto 100px;
+	grid-row-gap: 4px;
+	max-height:calc(100vh - 200px);
+	overflow:auto;
+}
+#typer{
+	padding:2px;
+	padding-left:8px;
+	border:2px solid dodgerblue;
+	border-radius:10px 0px 0px 10px;
+	box-sizing:border-box;
+	min-height:2em;
+	grid-column-end:span 4;
+	overflow-x:auto;
+}
+.blinker{
+	display:inline-block;
+	width:0px;
+	position:relative;
+	left:-3px;
+	font:1em arial;
+	font-weight:100;
+}
+.letter{
+	display:inline-block;
+	margin:0;
+}
+
+#sendbar{
+	display:grid;
+	grid-template-rows: calc(10% + 12px) auto;
+}
+#sendbar button{
+	font-weight:bold;
+}
+#showopbut{
+	font-size:8px;
+}
+.pressed{
+	background:#0005 !important;
+	box-sizing:border-box;
+	border-style:outset;
+	border:2px solid dodgerblue;
+}
+#options{
+	display:none;
+}
+#options button{
+	font-size:11px;
+	background:#10101010;
+}
+#sendbut1{
+	padding:2px;
+	font-size:10px;
+	color:green;
+}
+
+
+#msgbox{
+	min-height:100px;
+	border:1px solid dodgerblue;
+	border-radius:10px 0px 0px 10px;
+	padding:2px;
+	padding-left:8px;
+	grid-column-end:span 3;
+	display:grid;
+	grid-gap:10px;
+	overflow:auto;
+}
+#typingbox{
+	border:1px solid dodgerblue;
+	border-radius:0px 10px 10px 0px;
+	padding:2px;
+	padding-right:8px;
+	font-size:.8em;
+	grid-column-end:span 2;
+	overflow:auto;
+}
+.msg{
+	font-size:.8em;
+	background-color:azure;
+	border-radius:8px;
+	padding-left:3px;
+}
+
+
+#showme{
+	position:fixed;
+	bottom:10px;
+}
+#board *{
+	font-size:20px;
+}
+#keys, #smilediv{
+	display:grid;
+	width:calc(100% - 4px);
+	position:fixed;
+	bottom:10px;
+}
+#keys div, #smilediv div{
+	display:grid;
+	grid-auto-flow:column;
+}
+#smilebox{
+	grid-template-rows: repeat(3,auto);
+}
+#keys button:hover, #smilediv button:hover{
+	background:#d5d5d5;
+	font-weight:600;
+}
+#keys button, #smilediv button{
+	border: .1px solid lightgrey;
+	outline:none;
+}
+#inpsm{
+	font-size:.7em;
+	padding:4px;
+	grid-column-end:span 8;
+	text-align:center;
+}
+#spacebut{
+	grid-column-end:span 8;
+}
+#sendbut2{
+	color:green;
+}
+.larger{
+	font-size: 1.4em !important;
+	font-weight: 900;
+	line-height: 1px;
+}

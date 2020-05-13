@@ -1,0 +1,164 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> poka </title>
+	<link rel='stylesheet' 	href="../static/ml.css">
+</head>
+
+<body id='bdy'>
+<center>
+	<div class='header' onmousedown='return false'>
+		<h1>Poka</h1>
+	</div>
+	<div id='logo'><a href='/'><img src='../static/favicon.ico' title='home'></a></div> 
+	
+	<br>
+	
+	<div id='plotgraph' class='box'>
+		<div class='back back1'></div>
+		<a href="/plotYourFile"><button class='but' id='but1'> <u><b>Analysis your CSV file</b></u>
+		<br><div class='span'>Analyse your CSV file by making Pie-Chart, Scatter-Plot etc between different columns. </div></button></a>
+	</div>
+	
+	<br>
+	
+	<div id='mathequation' class='box'>
+		<div class='back back2'></div>
+		<a href="/EquationPlotter"><button class='but' id='but2'><u><b>Draw Math Equations</b></u>
+		<br><div class='span'>Math is fun!! Enter any equation....x**3, circle, sin, cos, |x| etc.<br>
+		We will draw its graph for you.</div></button></a>
+	</div>
+	
+	<br>
+	
+	<div id='mypage' class='box'>
+		<div class='back back3'></div>
+		<a href="/myPage"><button class='but' id='but3'> <u><b>Create your own Page</b></u>
+		<br><div class='span'>Its just very easy-peasy to create a web-page now!<br>
+		With simple drag-and-drop, create and show-off your page. </div></button></a>
+	</div>
+	
+	<br>
+</center>
+	
+	<div id='comments' align='center'>
+		<button id='combut' > <u>Comments</u> <div id='rotate'><small> ▶ </small></div></button>
+		<br>
+		<div id='container'>
+			<form onsubmit='return false'>
+				<div>
+					<input id='user' type='text' placeholder='Add your name here..' tabindex=1 required>
+					<div id='holder'> Add your comment here...</div>
+					<div id='eq' contenteditable=true spellcheck=false tabindex=2 required></div>
+				</div>
+				<button type='submit' id='post' tabindex=3>POST </button>
+			</form>
+			<br>
+			<div id='comdata'><div><pre>its great</pre></div><span>@nn</span></div>
+			<div class='loadbox' id='loadbox'>
+				<div class='loader'>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<p>loading</p>
+			</div>
+		</div>
+	</div>
+	
+	<br><br>
+	
+	<footer>
+		Contact / Feedback: <a target="_blank" href="https://mail.google.com/mail/?view=cm&to=rohan.rawat.9897@gmail.com"><b>rohan.rawat.9897@gmail.com</b></a>
+	</footer>
+	
+	
+	
+	<script>
+		bdy.onerror=function(e){alert(e);}
+		combut.onclick=function(){ rotfun().catch(netfail) };
+		post.onclick=function(){ storeit().catch(netfail) };
+		holder.onclick=focuseq;
+		eq.onfocus=hideit;
+		eq.onblur=showit;
+		
+		let flag=0;
+		async function rotfun(){
+			if(flag){
+				flag=0;
+				rotate.style.transform='rotate(90deg)';
+				comments.style.width='200px';
+				container.style.display='none';
+				combut.style.fontSize='20px';
+				combut.style.paddingBottom='initial';
+			}
+			else{
+				flag=1;
+				container.style.display='flex';
+				rotate.style.transform='rotate(270deg)';
+				comments.style.width='94%';
+				combut.style.fontSize='calc(22px + 2vw)';
+				combut.style.paddingBottom='20px';
+				loadbox.style.display='grid';
+				let resp = await fetch('/comments');
+				if(!resp.ok)
+				{
+					comdata.innerHTML='Some Error occured.';
+					return;
+				}
+				let data = await resp.json();
+				if(data['code']!=0)
+					comdata.innerHTML='Error occured on server: '+data['msg'];
+				else
+					comdata.innerHTML=data['msg'];
+				loadbox.style.display='none';
+			}
+		}
+		
+		async function storeit(){
+			if(!eq.innerText || !user.value) return;
+			let comm = '<div><pre>'+eq.innerText+'</pre></div><span>'+user.value+'</span>';
+			loadbox.style.display='grid';
+			let resp = await fetch('/storeit',{method:'POST',headers:{'Content-Type': 'application/json;charset=utf-8'}, 						body:JSON.stringify(comm) });
+			if(!resp.ok)
+			{
+				alert('Some Error occured.');
+				return;
+			}
+			let data = await resp.json();
+			loadbox.style.display='none';
+			if(data['code']!=0){
+				alert('Some Error occured on server.');
+				return;
+			}
+			comdata.insertAdjacentHTML('beforeEnd',comm);
+			eq.innerText='';
+			holder.hidden=false;
+		}
+	
+		function hideit(){
+			holder.style.opacity='0';
+		}
+		function showit(){
+			if(eq.innerText=='')
+			holder.style.opacity='.5';
+		}
+		
+		function focuseq(){
+			eq.focus();
+		}
+		
+		function netfail(e){
+			alert('Some network error occured: '+e);
+			loadbox.style.display='none';
+		}
+	</script>
+	
+</body>
+
+</html>
