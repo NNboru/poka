@@ -1,5 +1,5 @@
 @echo off
-cd F:\Rohan\Python\html\flask
+cd F:\Rohan\Python\html\flask\poka
 f:
 set FLASK_DEBUG=1
 set FLASK_APP=app.py
