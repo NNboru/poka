@@ -2,7 +2,7 @@ body *{
 	font-family:helvetica;
 }
 body{
-	font-size:2em;
+	font-size:1.6em;
 	background-color:#E4EEEE;
 }
 #logo img{
@@ -30,7 +30,7 @@ header{
 	font-size:.8em;
 	color:darkblue;
 	padding:2% 40px;
-	width:90%;
+	width:70%;
 	border-radius:30px 30px 0 0;
 	outline:none;
 	letter-spacing:2px;
@@ -40,7 +40,7 @@ header{
 	margin:auto;
 }
 #btns{
-	width:88%;
+	width:68%;
 	height:280px;
 	display:grid;
 	grid-template-columns:repeat(5,10%) ;
@@ -54,7 +54,7 @@ header{
 	padding:1%;
 }
 button{
-	font-size:calc(.4em + 1vw);
+	font-size:calc(.3em + 1vw);
 	width:180%;
 	height:40px;
 	border-radius:20px;
@@ -68,7 +68,7 @@ button:hover{
 	background:white;
 }
 #imgbox{
-	width:90%;
+	width:60%;
 	max-height:60vw;
 	overflow:auto;
 	margin:auto;
