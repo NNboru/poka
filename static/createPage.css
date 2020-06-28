@@ -1,3 +1,6 @@
+html{
+	height:calc(100% - 20px);
+}
 body{
 	font-size:20px;
 	background-color:#E8EEEE;
@@ -15,8 +18,8 @@ body{
 	border-style:solid;
 	border-color:rgb(173, 216, 230,.8);
 	outline:none;
-	width:320;
-	height:300;
+	width:320px;
+	height:300px;
 	transition:hidden .4s;
 	background-image:url('/static/drag.png');
 	background-repeat:no-repeat;

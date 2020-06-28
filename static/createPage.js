@@ -199,8 +199,8 @@ document.addEventListener('DOMContentLoaded',function(){
 		}
 		else return;
 		newbox = page.firstElementChild;
-		newbox.style.top=window.scrollY + bdy.offsetHeight*fact/2-150;
-		newbox.style.left=window.scrollX + bdy.offsetWidth*fact/2-150;
+		newbox.style.top=window.scrollY + bdy.offsetHeight*fact/2-150 + 'px';
+		newbox.style.left=window.scrollX + bdy.offsetWidth*fact/2-150 + 'px';
 		newbox.getElementsByClassName('txtdialog')[0].addEventListener('touchstart',stopit);
 		newbox.style.zIndex=maxz++;
 		$(newbox).resizable({handles: "se, sw", start:grabresize, resize:resizing}).draggable({handle:'.bar', start:grabdrag, drag:dragging});
