@@ -118,7 +118,7 @@ def saveImage():
 
 @app.route('/savePass', methods=['POST'])
 def savePass():
-    password = hash(str(request.get_json())+'nn')
+    password = str(sum([ord(i)<<20 for i in s]))
     return json.dumps({'code':0, 'msg':password})
     
     
