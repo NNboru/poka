@@ -50,7 +50,7 @@ header{
 	align-items:center;
 	justify-items:center;
 	overflow:hidden;
-	margin-left:5%;
+	margin:auto;
 	padding:1%;
 }
 button{
